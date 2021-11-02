@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}" />
     <!-- Icons CSS -->
     <link rel="stylesheet" href="{{ asset('/css/icons.css') }}" />
+    {{-- fontawsome --}}
+    <link rel="stylesheet" href="{{ asset('/fontawesome/css/all.css') }}">
     <!-- App CSS -->
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}" />
 </head>

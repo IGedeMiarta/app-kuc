@@ -57,8 +57,8 @@
 
                                             <div class="btn-group mt-3 w-100">
                                                 <button type="submit" class="btn btn-primary btn-block">Log In</button>
-                                                <button type="button" class="btn btn-primary"><i
-                                                        class="lni lni-arrow-right"></i>
+                                                <button type="button" class="btn btn-primary">
+                                                    <i class="fas fa-sign-in-alt"></i>
                                                 </button>
                                             </div>
                                             <hr>
