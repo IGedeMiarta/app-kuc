@@ -18,3 +18,7 @@ Route::get('/', function () {
     return redirect('/login');
 });
 Route::get('/login', [LoginController::class,'index']);
+
+Route::get('/dashboard', function () {
+    return view('layouts.dashboard.index',['title'=>'title']) ;
+});
