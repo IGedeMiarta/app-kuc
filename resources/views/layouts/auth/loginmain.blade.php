@@ -34,7 +34,7 @@
                                                 is-invalid
                                             @enderror"
                                                     name="username" id="username" placeholder="Enter your username" value=""
-                                                    autofocus />
+                                                    autofocus required />
                                                 @error('username')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
@@ -47,7 +47,8 @@
                                                     class="form-control @error('password')
                                                 is-invalid
                                             @enderror"
-                                                    name="password" id="password" placeholder="Enter your password" />
+                                                    name="password" id="password" placeholder="Enter your password"
+                                                    required />
                                                 @error('password')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
