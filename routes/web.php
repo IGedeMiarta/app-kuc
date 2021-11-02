@@ -20,5 +20,5 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class,'index']);
 
 Route::get('/dashboard', function () {
-    return view('layouts.dashboard.index',['title'=>'title']) ;
+    return view('layouts.dashboard.index',['title'=>'Dashboard']) ;
 });
