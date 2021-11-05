@@ -46,22 +46,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $data = [
-            1=>[
-                'Nama'=>'Gede Miarta',
-                'Jenkel'=>'L',
-                'Umur'=>23
-            ],2=>[
-                'Nama'=>'Gede Bayu',
-                'Jenkel'=>'L',
-                'Umur'=>24
-            ],3=>[
-                'Nama'=>'Bayu SS',
-                'Jenkel'=>'L',
-                'Umur'=>25
-            ]
-            ];
-        return $data[$id];
+     //
     }
 
     /**
