@@ -11,9 +11,9 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    protected $connection = 'pgsql';
     protected $table = 't_user';
-
+    
     protected $guarded  = [
         'id'
     ];
