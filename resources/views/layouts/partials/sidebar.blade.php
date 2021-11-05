@@ -3,7 +3,7 @@
      <!--sidebar-wrapper-->
      <div class="sidebar-wrapper" data-simplebar="true">
          <div class="sidebar-header">
-             <a href="/">
+             <a href="{{ url('/') }}">
                  <div class="">
                      <img src=" {{ asset('/images/logo.png') }}" class="logo-icon-2" alt="" />
              </a>
@@ -20,35 +20,15 @@
      <!--navigation-->
      <ul class="metismenu" id="menu">
          <li>
-             <a href="/">
+             <a href="{{ url('/dashboard') }}">
                  <div class="parent-icon icon-color-1"><i class="bx bx-home-alt"></i>
                  </div>
                  <div class="menu-title">Dashboard</div>
              </a>
          </li>
-         {{-- <li>
-             <a href="javascript:;" class="has-arrow">
-                 <div class="parent-icon icon-color-1"><i class="bx bx-home-alt"></i>
-                 </div>
-                 <div class="menu-title">Dashboard</div>
-             </a>
-             <ul>
-                 <li> <a href="/"><i class="bx bx-right-arrow-alt"></i>Dashboard</a>
-                 </li>
-                 <li> <a href="/blank"><i class="bx bx-right-arrow-alt"></i>Blank</a>
-                 </li>
-                 <li> <a href="/input"><i class="bx bx-right-arrow-alt"></i>Form</a>
-                 </li>
-                 <li> <a href="/select-input"><i class="bx bx-right-arrow-alt"></i>Form Select</a>
-                 </li>
-                 <li> <a href="/login" target="blank"><i class="bx bx-right-arrow-alt"></i>Login</a>
-                 </li>
-                 <li> <a href="/lockscreen" target="_blank"><i class="bx bx-right-arrow-alt"></i>Lock</a>
-                 </li>
-             </ul>
-         </li> --}}
+
          <li class="menu-label">Web Apps</li>
-         <li>
+         {{-- <li>
              <a href="javascript:;" class="has-arrow">
                  <div class="parent-icon icon-color-6"><i class="bx bx-package"></i>
                  </div>
@@ -132,13 +112,20 @@
                  <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Chat Group</a>
                  </li>
              </ul>
-         </li>
-         <li class="menu-label">Pegawai</li>
+         </li> --}}
          <li>
-             <a href="/pegawai">
+             <a href="{{ url('/tagihan') }}">
+                 <div class="parent-icon icon-color-9"><i class="bx bx-wallet-alt"></i>
+                 </div>
+                 <div class="menu-title">Tagihan</div>
+             </a>
+         </li>
+         <li class="menu-label">User</li>
+         <li>
+             <a href="{{ url('/user/1') }}">
                  <div class="parent-icon icon-color-4"><i class="bx bx-user-circle"></i>
                  </div>
-                 <div class="menu-title">Data Pegawai</div>
+                 <div class="menu-title">User</div>
              </a>
          </li>
      </ul>

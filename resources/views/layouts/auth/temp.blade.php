@@ -21,5 +21,11 @@
 
 @yield('content')
 
-
+<script>
+	window.fwSettings={
+	'widget_id':73000000396
+	};
+	!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
+</script>
+<script type='text/javascript' src='https://widget.freshworks.com/widgets/73000000396.js' async defer></script>
 </html>
