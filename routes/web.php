@@ -20,11 +20,12 @@ Route::get('/', function () {
     return redirect('/login');
 });
 Route::get('/login', [LoginController::class,'index'])->name('login');
+Route::post('/login', [LoginController::class,'authenticate']);
 
 Route::get('/dashboard', function () {
     return view('layouts.dashboard.index',['title'=>'Dashboard']) ;
 });
-Route::group(['middleware'=>['auth','ceklevel:admin,user']],function(){
-    Route::get('/tagihan',[CollectorController::class,'index'])->name('tagihan');
-});
+// Route::group(['middleware'=>['auth','ceklevel:admin,user']],function(){
+// });
+Route::get('/tagihan',[CollectorController::class,'index'])->name('tagihan');
 Route::resource('user', UserController::class);
