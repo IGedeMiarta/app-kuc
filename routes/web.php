@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdmCollectorController;
 use App\Http\Controllers\CollectorController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
@@ -31,6 +32,8 @@ Route::get('/dashboard', function () {
 
 Route::get('/tagihan-kolektor',[CollectorController::class,'index'])->name('tagihan')->middleware('auth');
 Route::resource('user', UserController::class);
+Route::resource('tagihan-admin', AdmCollectorController::class);
+
 Route::get('/test', function () {
     return view('pages.blank',['title'=>'title']);
 });
