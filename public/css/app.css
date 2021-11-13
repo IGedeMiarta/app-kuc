@@ -2849,7 +2849,7 @@ File: app.css
         }
     }
     
-    @media screen and (min-width:775px) and (max-width: 1026px) {
+    @media screen and (min-width:750px) and (max-width: 1026px) {
         .name-mobile{
             display: none;
         }
@@ -2895,6 +2895,7 @@ File: app.css
         .user-info {
             display: none;
         }
+        
         .lang span {
             display: none;
         }

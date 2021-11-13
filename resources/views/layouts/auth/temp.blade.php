@@ -22,11 +22,11 @@
 @yield('content')
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
 <!--Password show & hide js -->
-<script>
+{{-- <script>
     $(function() {
         $('[data-toggle="tooltip"]').tooltip()
     })
-</script>
+</script> --}}
 <script>
     $(document).ready(function() {
         $("#show_hide_password a").on('click', function(event) {
