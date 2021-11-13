@@ -2849,11 +2849,12 @@ File: app.css
         }
     }
     
-    @media screen and (min-width:766px) {
+    @media screen and (min-width:767px) {
         .name-mobile{
             display: none;
         }
     }
+   
     
     @media screen and (max-width: 991px) {
         .section-authentication-login {
@@ -2896,7 +2897,10 @@ File: app.css
         .user-info {
             display: none;
         }
-        
+        .name-mobile{
+            display: inline;
+        }
+
         .lang span {
             display: none;
         }

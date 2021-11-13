@@ -11,10 +11,10 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item name-mobile ">
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-end user-info">
                         <h6 class="user-name mt-3 mb-0 justify-content-end">{{ auth()->user()->fullname }} </h6>
 
-                        <p class="designattion mt-2  ml-n5 mb-0 text-success">{{ strtoupper(auth()->user()->level) }}
+                        <p class="designattion mt-2  ml-n5 mb-0 text-success">{{ auth()->user()->level }}
                         </p>
                     </div>
                 </li>
@@ -27,7 +27,7 @@
                             <div class="media-body user-info">
                                 <p class="user-name mb-0 ">{{ auth()->user()->fullname }}</p>
                                 <p class="designattion mb-0 text-success">
-                                    {{ strtoupper(auth()->user()->level) }}</p>
+                                    {{ auth()->user()->level }}</p>
                             </div>
                             <img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">
                         </div>
