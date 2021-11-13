@@ -43,6 +43,7 @@
                                             @enderror"
                                                     name="username" id="username" placeholder="Enter your username"
                                                     value="{{ old('username') }}" />
+
                                                 @error('username')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
@@ -55,7 +56,8 @@
                                                     class="form-control @error('password')
                                                 is-invalid
                                             @enderror"
-                                                    name="password" id="password" placeholder="Enter your password" />
+                                                    name="password" id="password" placeholder="Enter your password"
+                                                    required />
                                                 @error('password')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
@@ -65,8 +67,8 @@
 
                                             <div class="btn-group mt-3 w-100">
                                                 <button type="submit" class="btn btn-primary btn-block">Log In</button>
-                                                <button type="button" class="btn btn-primary"><i
-                                                        class="lni lni-arrow-right"></i>
+                                                <button type="button" class="btn btn-primary">
+                                                    <i class="fas fa-sign-in-alt"></i>
                                                 </button>
                                             </div>
                                             <hr>

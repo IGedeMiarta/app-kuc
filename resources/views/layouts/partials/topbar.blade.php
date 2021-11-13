@@ -2,7 +2,7 @@
 <header class="top-header">
     <nav class="navbar navbar-expand">
         <div class="left-topbar d-flex align-items-center">
-            <a href="javascript:;" class="toggle-btn"> <i class="bx bx-menu"></i>
+            <a href="javascript:;" class="toggle-btn"> <i class="fas fa-align-justify h5"></i>
             </a>
         </div>
 
@@ -33,8 +33,8 @@
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item"
-                            href="/pegawai-detail/{{ '000' }}"><i
-                                class="bx bx-user"></i><span>Profile</span></a>
+                            href="/pegawai-detail/{{ '000' }}"><i class="fas fa-user h6"></i><span>
+                                Profile</span></a>
 
                         <div class="dropdown-divider mb-0">
 
@@ -43,8 +43,9 @@
                                      class="bx bx-power-off"></i><span>Logout</span></a> --}}
                         <form action="{{ url('/logout') }}" method="post">
                             @csrf
-                            <button type="submit" class="dropdown-item"><i
-                                    class="bx bx-power-off"></i><span>Logout</span></button>
+                            <button type="submit" class="dropdown-item">
+                                <i class="fas fa-sign-out-alt h6"></i>
+                                <span>Logout</span></button>
                         </form>
                     </div>
                 </li>
