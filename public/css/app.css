@@ -231,6 +231,22 @@ File: app.css
         font-size: 14px;
         color: #a9a8a8;
     }
+
+     .user-mobile {
+        text-align: right;
+        margin-right: 15px;
+    }
+    
+    .user-mobile .user-name {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+    .user-mobile .designattion {
+        font-size: 14px;
+        color: #a9a8a8;
+    }
+
     
     .user-img {
         width: 52px;
@@ -2853,6 +2869,9 @@ File: app.css
         .name-mobile{
             display: none;
         }
+        .user-mobile{
+            display: none;
+        }
     }
    
     
@@ -2897,7 +2916,7 @@ File: app.css
         .user-info {
             display: none;
         }
-        .name-mobile{
+        .user-mobile{
             display: inline;
         }
 
