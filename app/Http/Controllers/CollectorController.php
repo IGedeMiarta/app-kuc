@@ -15,31 +15,9 @@ class CollectorController extends Controller
 
     public function index()
     {
-        $tagihan  = [
-            [
-                'nama'=>'I Gede Miarta Yasa',
-                'Alamat'=>'Tabanan Bali',
-                'Domsili'=>'Bali',
-                'Tagihan'=>20000],
-            [
-                'nama'=>'I Gede Bayu Setiadai',
-                'Alamat'=>'Tabanan Bali',
-                'Domsili'=>'Bali',
-                'Tagihan'=>290000],
-            [
-                'nama'=>'I Gede Wawan',
-                'Alamat'=>'Denpasar Bali',
-                'Domsili'=>'Bali',
-                'Tagihan'=>290000
-            ],[
-                'nama'=>'I Komang Putu Wawan',
-                'Alamat'=>'Denpasar Bali',
-                'Domsili'=>'Bali',
-                'Tagihan'=>290000
-            ],
-        ];
+        
         $data['title'] = 'Tagihan';
-        $data['tagihan']= $tagihan;
+        $data['tagihan']= '';
         return view('pages.kolektor.kolektor',$data);
     }
 

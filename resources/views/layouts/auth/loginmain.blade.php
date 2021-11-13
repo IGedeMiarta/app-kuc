@@ -20,6 +20,14 @@
                                             </button>
                                         </div>
                                     @endif
+                                    @if (session()->has('success'))
+                                        <div class="alert alert-success alert-dismissible fade show mb-n3" role="alert">
+                                            {{ session('success') }}
+                                            <button type="button" class="close" data-dismiss="alert"
+                                                aria-label="Close"> <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    @endif
                                     <form action="{{ url('/login') }}" method="post">
                                         <div class="card-body p-md-5">
                                             @csrf
@@ -33,7 +41,7 @@
                                                     class="form-control @error('username')
                                                 is-invalid
                                             @enderror"
-                                                    name="username" id="username" placeholder="Enter your username" value=""
+                                                    name="username" id="username" placeholder="Enter your username" value="{{ old('username') }}"
                                                     autofocus />
                                                 @error('username')
                                                     <div class="invalid-feedback">
@@ -62,7 +70,11 @@
                                                 </button>
                                             </div>
                                             <hr>
-
+                                            <div class="text-center mt-4">
+                                                <p class="mb-0">Don't have an account? <a
+                                                        href="{{ url('register') }}">Register</a>
+                                                </p>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>

@@ -16,8 +16,8 @@
                         data-toggle="dropdown">
                         <div class="media user-box align-items-center">
                             <div class="media-body user-info">
-                                <p class="user-name mb-0">{{ 'NAMA' }}</p>
-                                <p class="designattion mb-0 text-success">{{ 'ROLE' }}</p>
+                                <p class="user-name mb-0">{{ auth()->user()->fullname }}</p>
+                                <p class="designattion mb-0 text-success">{{ strtoupper(auth()->user()->level) }}</p>
                             </div>
                             <img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">
                         </div>
@@ -31,7 +31,7 @@
                         </div>
                         {{-- <a class="dropdown-item" href="/lol"><i
                                      class="bx bx-power-off"></i><span>Logout</span></a> --}}
-                        <form action="logout" method="post">
+                        <form action="{{ url('/logout') }}" method="post">
                             @csrf
                             <button type="submit" class="dropdown-item"><i
                                     class="bx bx-power-off"></i><span>Logout</span></button>

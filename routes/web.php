@@ -19,13 +19,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/login');
 });
-Route::get('/login', [LoginController::class,'index'])->name('login');
+Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class,'authenticate']);
+Route::get('/register', [LoginController::class,'regist'])->middleware('guest');
+Route::post('/register', [LoginController::class,'register']);
+Route::post('/logout',[LoginController::class,'logout'])->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('layouts.dashboard.index',['title'=>'Dashboard']) ;
-});
-// Route::group(['middleware'=>['auth','ceklevel:admin,user']],function(){
-// });
-Route::get('/tagihan',[CollectorController::class,'index'])->name('tagihan');
+})->middleware('auth');
+
+Route::get('/tagihan-kolektor',[CollectorController::class,'index'])->name('tagihan')->middleware('auth');
 Route::resource('user', UserController::class);
+Route::get('/test', function () {
+    return view('pages.blank',['title'=>'title']);
+});
