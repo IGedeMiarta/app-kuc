@@ -21,5 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/test', function () {
-    return GlobalPiutangTempo::all();
+    return GlobalPiutangTempo::where('kodefakturjual','=','KX-00212/10/21')->first();
 });

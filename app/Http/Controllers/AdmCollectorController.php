@@ -19,6 +19,7 @@ class AdmCollectorController extends Controller
         $tanggal = Date('Y-m-d',strtotime(now()));
         $data['tempo']= GlobalPiutangTempo::where('tanggal2','=',$tanggal)->get();
         return view('pages.kolektor.adm_kolektor',$data);
+        
     }
 
     /**
@@ -50,7 +51,8 @@ class AdmCollectorController extends Controller
      */
     public function show($id)
     {
-        //
+      //
+
     }
 
     /**

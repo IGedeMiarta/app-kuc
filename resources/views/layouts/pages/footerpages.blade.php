@@ -35,7 +35,33 @@
     });
 </script>
 <!-- App JS -->
-<script src="{{ url('/js/app.js') }}"></script>
+<script src="{{ asset('/js/app.js') }}"></script>
 <!-- Compiled and minified JavaScript -->
 
-<script src="{{ url('/js/myscript.js') }}"></script>
+<script src="{{ asset('/js/myscript.js') }}"></script>
+
+<script>
+    $('#datafaktur').on('click', function() {
+        var kd_faktur = $(this).data('faktur');
+
+        $.ajax({
+            type: 'GET',
+            data: {
+                kodefaktur: kd_faktur
+            },
+            dataType: 'JSON',
+            async: true,
+            url: "{{ route('piutangtempo') }}",
+            success: function(rs) {
+                console.log(rs);
+                $('#nama').val(rs.data.nama);
+                $('#kodecustomer').val(rs.data.kodecustomer);
+                $('#kodefakturjual').val(rs.data.kodefakturjual);
+                $('#tanggal').val(rs.data.tanggal);
+                $('#tanggal2').val(rs.data.tanggal2);
+                $('#alamat').val(rs.data.alamat);
+                $('#namakota').val(rs.data.namakota);
+            }
+        })
+    })
+</script>

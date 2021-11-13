@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdmCollectorController;
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\CollectorController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
@@ -33,9 +34,14 @@ Route::get('/dashboard', function () {
     return view('layouts.dashboard.index',['title'=>'Dashboard']) ;
 })->middleware('auth');
 
+
 Route::get('/tagihan-kolektor',[CollectorController::class,'index'])->name('tagihan')->middleware('auth');
 Route::resource('user', UserController::class);
-Route::resource('tagihan-admin', AdmCollectorController::class);
+// Route::resource('/tagihan-admin', AdmCollectorController::class);
+Route::get('/tagihan-admin', [AdmCollectorController::class,'index']);
+
+Route::get('/ajax', [AjaxController::class,'piutangtempo'])->name('piutangtempo');
+
 
 Route::get('/test', function () {
     return view('pages.blank',['title'=>'title']);
