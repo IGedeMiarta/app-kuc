@@ -9,7 +9,8 @@
 
         <div class="right-topbar ml-auto">
             <ul class="navbar-nav">
-                <li class="nav-item search-btn-mobile">
+
+                <li class="nav-item name-mobile ">
                     <div class="d-flex justify-content-end">
                         <h6 class="user-name mt-3 mb-0 justify-content-end">{{ auth()->user()->fullname }} </h6>
 
