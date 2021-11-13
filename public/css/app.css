@@ -2849,7 +2849,7 @@ File: app.css
         }
     }
     
-    @media screen and (min-width:750px) and (max-width: 1026px) {
+    @media screen and (min-width:766px) {
         .name-mobile{
             display: none;
         }
@@ -2889,6 +2889,7 @@ File: app.css
             right: 0;
             left: 0;
         }
+       
     }
     
     @media screen and (max-width: 767px) {
