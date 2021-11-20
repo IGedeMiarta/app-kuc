@@ -12,8 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     protected $connection = 'pgsql';
-    protected $table = 't_users';
-    
+    protected $table = 'users';
     protected $guarded  = [
         'id'
     ];

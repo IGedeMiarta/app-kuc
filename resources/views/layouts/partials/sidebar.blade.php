@@ -28,6 +28,24 @@
          </li>
 
          <li class="menu-label">Web Apps</li>
+         @if (auth()->user()->level == 'admin')
+             <li>
+                 <a href="{{ url('/tagihan-admin') }}">
+                     <div class="parent-icon icon-color-9"><i class="bx bx-wallet-alt"></i>
+                     </div>
+                     <div class="menu-title">Tagihan Admin</div>
+                 </a>
+             </li>
+         @endif
+         @if (auth()->user()->level == 'kolektor')
+             <li>
+                 <a href="{{ url('/tagihan-kolektor') }}">
+                     <div class="parent-icon icon-color-9"><i class="bx bx-wallet-alt"></i>
+                     </div>
+                     <div class="menu-title">Tagihan Kolektor</div>
+                 </a>
+             </li>
+         @endif
          {{-- <li>
              <a href="javascript:;" class="has-arrow">
                  <div class="parent-icon icon-color-6"><i class="bx bx-package"></i>
@@ -113,13 +131,7 @@
                  </li>
              </ul>
          </li> --}}
-         <li>
-             <a href="{{ url('/tagihan') }}">
-                 <div class="parent-icon icon-color-9"><i class="bx bx-wallet-alt"></i>
-                 </div>
-                 <div class="menu-title">Tagihan</div>
-             </a>
-         </li>
+
          <li class="menu-label">User</li>
          <li>
              <a href="{{ url('/user/1') }}">
