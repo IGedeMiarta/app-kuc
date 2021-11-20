@@ -41,8 +41,8 @@
                                                     class="form-control @error('username')
                                                 is-invalid
                                             @enderror"
-                                                    name="username" id="username" placeholder="Enter your username" value="{{ old('username') }}"
-                                                    autofocus />
+                                                    name="username" id="username" placeholder="Enter your username"
+                                                    value="{{ old('username') }}" />
                                                 @error('username')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
