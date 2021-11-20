@@ -232,7 +232,24 @@ File: app.css
         color: #a9a8a8;
     }
 
-     .user-mobile {
+
+
+    .u-info {
+        text-align: right;
+        margin-right: 15px;
+    }
+    
+    .u-info .user-name {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+    .u-info .designattion {
+        font-size: 14px;
+        color: #a9a8a8;
+    }
+
+     /* .user-mobile {
         text-align: right;
         margin-right: 15px;
     }
@@ -245,7 +262,7 @@ File: app.css
     .user-mobile .designattion {
         font-size: 14px;
         color: #a9a8a8;
-    }
+    } */
 
     
     .user-img {
@@ -2913,9 +2930,9 @@ File: app.css
     }
     
     @media screen and (max-width: 767px) {
-        .user-info {
+        /* .user-info {
             display: none;
-        }
+        } */
         .user-mobile{
             display: inline;
         }

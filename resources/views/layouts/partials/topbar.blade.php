@@ -10,14 +10,14 @@
         <div class="right-topbar ml-auto">
             <ul class="navbar-nav">
 
-                <li class="nav-item name-mobile ">
+                {{-- <li class="nav-item name-mobile ">
                     <div class="d-flex justify-content-end">
                         <h6 class="user-name mt-3 mb-0 justify-content-end">{{ auth()->user()->fullname }} </h6>
 
                         <p class="designattion mt-2  ml-n5 mb-0 text-success">{{ strtoupper(auth()->user()->level) }}
                         </p>
                     </div>
-                </li>
+                </li> --}}
 
                 {{-- account login --}}
                 <li class="nav-item dropdown dropdown-user-profile">

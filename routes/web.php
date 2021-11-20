@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdmCollectorController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\CollectorController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -30,9 +31,6 @@ Route::get('/register', [LoginController::class,'regist'])->middleware('guest');
 Route::post('/register', [LoginController::class,'register']);
 Route::post('/logout',[LoginController::class,'logout'])->middleware('auth');
 
-Route::get('/dashboard', function () {
-    return view('layouts.dashboard.index',['title'=>'Dashboard']) ;
-})->middleware('auth');
 
 
 Route::get('/tagihan-kolektor',[CollectorController::class,'index'])->name('tagihan')->middleware('auth');
@@ -43,6 +41,6 @@ Route::get('/tagihan-admin', [AdmCollectorController::class,'index']);
 Route::get('/ajax', [AjaxController::class,'piutangtempo'])->name('piutangtempo');
 
 
-Route::get('/test', function () {
-    return view('pages.blank',['title'=>'title']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard',[DashboardController::class,'index']);
 });
