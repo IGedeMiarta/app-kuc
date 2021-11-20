@@ -34,13 +34,6 @@ Route::get('/dashboard', function () {
     return view('layouts.dashboard.index',['title'=>'Dashboard']) ;
 })->middleware('auth');
 
-<<<<<<< HEAD
-Route::get('/tagihan-kolektor',[CollectorController::class,'index'])->name('tagihan')->middleware('auth');
-Route::resource('user', UserController::class);
-Route::get('/test', function () {
-    return view('pages.blank',['title'=>'title']);
-});
-=======
 
 Route::get('/tagihan-kolektor',[CollectorController::class,'index'])->name('tagihan')->middleware('auth');
 Route::resource('user', UserController::class);
@@ -53,4 +46,3 @@ Route::get('/ajax', [AjaxController::class,'piutangtempo'])->name('piutangtempo'
 Route::get('/test', function () {
     return view('pages.blank',['title'=>'title']);
 });
->>>>>>> 27514f3bc90aa1d0c3948be239ed96fa47cac3b7
