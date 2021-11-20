@@ -1,6 +1,7 @@
 @extends('layouts.auth.temp')
 
 @section('content')
+    @include('sweetalert::alert')
 
     <body class="bg-register">
         <!-- wrapper -->

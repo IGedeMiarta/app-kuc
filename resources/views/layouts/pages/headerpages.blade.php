@@ -34,5 +34,4 @@
     <link href="{{ asset('/plugins/datatable/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css">
 
 
-
 </head>

@@ -43,7 +43,7 @@ class LoginController extends Controller
             }
         }
 
-        return back()->with('loginError','Login Gagal');
+        return back()->with('loginError','Username / Password Salah');
     }
     public function regist(){
         $data['title'] =  'Regist';

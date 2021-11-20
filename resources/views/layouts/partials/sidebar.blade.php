@@ -36,6 +36,13 @@
                      <div class="menu-title">Tagihan Admin</div>
                  </a>
              </li>
+             <li>
+                 <a href="{{ url('/users') }}">
+                     <div class="parent-icon icon-color-3"><i class="bx bx-user-check"></i>
+                     </div>
+                     <div class="menu-title">Validasi User</div>
+                 </a>
+             </li>
          @endif
          @if (auth()->user()->level == 'kolektor')
              <li>
@@ -134,10 +141,10 @@
 
          <li class="menu-label">User</li>
          <li>
-             <a href="{{ url('/user/1') }}">
+             <a href="#">
                  <div class="parent-icon icon-color-4"><i class="bx bx-user-circle"></i>
                  </div>
-                 <div class="menu-title">User</div>
+                 <div class="menu-title">Account</div>
              </a>
          </li>
      </ul>

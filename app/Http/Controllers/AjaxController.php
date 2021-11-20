@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GlobalPiutangTempo;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -18,5 +19,15 @@ class AjaxController extends Controller
        ];
 
        return response()->json($result,Response::HTTP_OK);
+   } 
+   public function user(Request $request){
+        $id = $request->id;
+        $user = User::where('id',$id)->first();
+        $result = [
+            'message'=> 'Detail User',
+            'data'=> $user
+        ];
+
+        return response()->json($result,Response::HTTP_OK);
    } 
 }

@@ -8,6 +8,7 @@
 <script src="{{ asset('/plugins/select2/js/select2.min.js') }}"></script>
 <!--Data Tables js-->
 <script src="{{ asset('/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+{{-- sweet alert --}}
 
 <script>
     $(document).ready(function() {
@@ -39,7 +40,7 @@
 <!-- Compiled and minified JavaScript -->
 
 <script src="{{ asset('/js/myscript.js') }}"></script>
-
+<!--notification js -->
 <script>
     $('#datafaktur').on('click', function() {
         var kd_faktur = $(this).data('faktur');
@@ -53,7 +54,6 @@
             async: true,
             url: "{{ route('piutangtempo') }}",
             success: function(rs) {
-                console.log(rs);
                 $('#nama').val(rs.data.nama);
                 $('#kodecustomer').val(rs.data.kodecustomer);
                 $('#kodefakturjual').val(rs.data.kodefakturjual);
@@ -61,6 +61,27 @@
                 $('#tanggal2').val(rs.data.tanggal2);
                 $('#alamat').val(rs.data.alamat);
                 $('#namakota').val(rs.data.namakota);
+            }
+        })
+    })
+    $('.users-verif').on('click', function() {
+        var userID = $(this).data('userid');
+
+        $.ajax({
+            type: 'GET',
+            data: {
+                id: userID
+            },
+            dataType: 'JSON',
+            async: true,
+            url: "{{ route('user.json') }}",
+            success: function(rs) {
+                $('#id').val(rs.data.id);
+                $('#fullname').val(rs.data.fullname);
+                $('#email').val(rs.data.email);
+                $('#username').val(rs.data.username);
+                $('#level').val(rs.data.level);
+                $('#status').val(rs.data.status);
             }
         })
     })

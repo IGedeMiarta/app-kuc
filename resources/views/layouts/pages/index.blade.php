@@ -3,6 +3,7 @@
 <body>
     @include('layouts.partials.sidebar')
     @include('layouts.partials.topbar')
+    @include('sweetalert::alert')
     <!--page-wrapper-->
     <div class="page-wrapper">
         <!--page-content-wrapper-->

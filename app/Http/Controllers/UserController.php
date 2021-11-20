@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,7 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = 'Validasi Users';
+        $data['users'] = User::all();
+        return view('pages.users.users',$data);
     }
 
     /**
@@ -67,9 +70,17 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
-        //
+        $user = User::findOrFail($request->id);
+        try {
+            $user->update($request->all());
+            // return redirect('/users')->with('success','User berhasil diupdate');
+            return redirect()->back()->with('success','User berhasil diupdate');
+        } catch (QueryException $e) {
+            return redirect()->back()->with('error','Gagal Update '.$e->errorInfo);
+        }
+    
     }
 
     /**

@@ -28,7 +28,7 @@
                                             </button>
                                         </div>
                                     @endif
-                                    <form action="{{ url('/login') }}" method="post">
+                                    <form action="{{ route('auth.login') }}" method="post">
                                         <div class="card-body p-md-5">
                                             @csrf
                                             <div class="text-center">

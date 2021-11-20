@@ -18,29 +18,28 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware(['guest'])->group(function () {
+    Route::get('/', function () {
+        return redirect('/login');
+    });
+    Route::get('/home', function () {
+        return redirect('/dashboard');
+    });
+    Route::get('/login', [LoginController::class,'index'])->name('login');
+    Route::post('/login', [LoginController::class,'authenticate'])->name('auth.login');
+    Route::get('/register', [LoginController::class,'regist']);
+    Route::post('/register', [LoginController::class,'register']);
 
-Route::get('/', function () {
-    return redirect('/login');
 });
-Route::get('/home', function () {
-    return redirect('/dashboard');
-});
-Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class,'authenticate']);
-Route::get('/register', [LoginController::class,'regist'])->middleware('guest');
-Route::post('/register', [LoginController::class,'register']);
-Route::post('/logout',[LoginController::class,'logout'])->middleware('auth');
-
-
-
-Route::get('/tagihan-kolektor',[CollectorController::class,'index'])->name('tagihan')->middleware('auth');
-Route::resource('user', UserController::class);
-// Route::resource('/tagihan-admin', AdmCollectorController::class);
-Route::get('/tagihan-admin', [AdmCollectorController::class,'index']);
-
-Route::get('/ajax', [AjaxController::class,'piutangtempo'])->name('piutangtempo');
-
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard',[DashboardController::class,'index']);
+    Route::post('/logout',[LoginController::class,'logout']);
+    Route::get('/tagihan-kolektor',[CollectorController::class,'index'])->name('tagihan');
+    // Route::resource('users', UserController::class);
+    Route::get('/users',[UserController::class,'index']);
+    Route::post('/users',[UserController::class,'update'])->name('user.update');
+    Route::get('/tagihan-admin', [AdmCollectorController::class,'index']);
+    Route::get('/ajax', [AjaxController::class,'piutangtempo'])->name('piutangtempo');
+    Route::get('/ajax/user', [AjaxController::class,'user'])->name('user.json');
 });
