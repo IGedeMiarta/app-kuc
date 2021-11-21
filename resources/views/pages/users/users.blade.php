@@ -9,6 +9,7 @@
                     <h5 class="mb-2 mb-lg-0">Verifikasi User</h5>
                 </div>
             </div>
+
             <div class="card-body">
                 <div class="card-body radius-10 border">
                     <div class="table-responsive">

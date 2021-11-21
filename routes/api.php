@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\GlobalPiutangTempo;
+use App\Models\Stockgab;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,5 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/test', function () {
-    return User::all();
+    return Stockgab::stokgabList()->limit(100)->get();
 });

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\QueryException;
 
 class UserController extends Controller
 {
@@ -38,7 +39,24 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $credentials = $request->validate([
+            'username' => 'required|min:3|max:255|unique:users',
+            'fullname' =>'required',
+            'email' =>'required|email:dns|unique:users',
+            'password' => 'required|min:8',
+        ]);
+        $credentials['username'] = strtolower($request->username);
+        $credentials['password'] =  Hash::make($credentials['password']);
+        $credentials['level']='user';
+        $credentials['status']='waiting';
+
+        try {
+            User::create($credentials);
+            return redirect('/login')->with('success','Registrasi Berhasil, hubungi admin untuk verifikasi akun kamu');
+    
+        } catch (QueryException $e) {
+            return redirect()->back()->with('error','Registrasi Gagal'.$e);
+        }
     }
 
     /**

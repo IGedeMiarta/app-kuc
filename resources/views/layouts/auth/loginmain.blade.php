@@ -12,7 +12,7 @@
 
                             <div class="row no-gutters">
                                 <div class="col-lg-6">
-                                    @if (session()->has('loginError'))
+                                    {{-- @if (session()->has('loginError'))
                                         <div class="alert alert-warning alert-dismissible fade show mb-n3" role="alert">
                                             {{ session('loginError') }}
                                             <button type="button" class="close" data-dismiss="alert"
@@ -27,7 +27,7 @@
                                                 aria-label="Close"> <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                    @endif
+                                    @endif --}}
                                     <form action="{{ route('auth.login') }}" method="post">
                                         <div class="card-body p-md-5">
                                             @csrf

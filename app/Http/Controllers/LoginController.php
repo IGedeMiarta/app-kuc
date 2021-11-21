@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -15,6 +16,7 @@ class LoginController extends Controller
     }
     public function authenticate(Request $request)
     {
+        $request['username']= strtolower($request->username);
         $credentials = $request->validate([
             'username' => 'required',
             'password' => 'required',
@@ -33,7 +35,7 @@ class LoginController extends Controller
 
                 $request->session()->regenerateToken();
 
-                return back()->with('loginError','Akun Belum Aktif');
+                return redirect()->back()->with('success','Akun Belum Aktif');
 
             } else {
                 
@@ -43,27 +45,14 @@ class LoginController extends Controller
             }
         }
 
-        return back()->with('loginError','Username / Password Salah');
+        return redirect()->back()->with('success','Username / Password Salah');
     }
     public function regist(){
         $data['title'] =  'Regist';
         return view('layouts.auth.register',$data);
     }
-    public function register(Request $request){
-        $credentials = $request->validate([
-            'username' => 'required|min:3|max:255|unique:users',
-            'fullname' =>'required',
-            'email' =>'required|email:dns',
-            'password' => 'required|min:8',
-        ]);
-        $credentials['password'] =  Hash::make($credentials['password']);
-        $credentials['level']='user';
-        $credentials['status']='waiting';
-        User::create($credentials);
 
-        return redirect('/login')->with('success','Registrasi Berhasil, hubungi admin untuk verifikasi akun kamu');
-    }
-
+   
     public function logout(Request $request){
         Auth::logout();
 

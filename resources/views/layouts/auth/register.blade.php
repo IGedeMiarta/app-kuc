@@ -1,8 +1,6 @@
 @extends('layouts.auth.temp')
 
 @section('content')
-    @include('sweetalert::alert')
-
     <body class="bg-register">
         <!-- wrapper -->
         <div class="wrapper">
@@ -86,6 +84,7 @@
                                                 </div>
 
                                             </div>
+
                                             <div class="btn-group mt-3 w-100">
                                                 <button type="submit" class="btn btn-primary btn-block">Register</button>
                                                 <button type="submit" class="btn btn-primary"><i
